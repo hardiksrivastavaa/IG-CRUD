@@ -14,9 +14,7 @@ h1 {
     justify-content: space-between;
     flex-wrap: wrap;
     flex-direction: column;
-    /* padding: 5px; */
     margin: 10px;
-
 }
 
 .mainPost-item {
@@ -53,8 +51,6 @@ h1 {
     font-family: sans-serif;
     font-weight: 600;
 }
-
-
 
 /* ------------------------------------------------------------------------------------ Show Post -----------------------------------------------------------------------------*/
 
@@ -93,7 +89,6 @@ h1 {
 .edit-form {
     display: flex;
     flex-direction: column;
-
 }
 
 .edit-form textarea {
@@ -107,6 +102,7 @@ h1 {
     background-color: none;
     font-size: larger;
 }
+
 /* ------------------------------------------------------------------------------------ New Post -----------------------------------------------------------------------------*/
 
 .newPost {
@@ -138,13 +134,8 @@ h1 {
     align-items: center;
 }
 
-/* .main-form {
-    margin: 0;
-    padding: 0;
-} */
-
 .btns {
-    color: brown    ;
+    color: brown;
     text-decoration: none;
     background-color: none;
     color: none;
@@ -152,7 +143,6 @@ h1 {
     padding: 0;
     border: 0;
 }
-
 
 /* ------------------------------------------------------------------------------------ Create New Button --------------------------------------------------------------------*/
 
@@ -168,4 +158,49 @@ h1 {
     transform: scale(1.5);
 }
 
-/* ------------------------------------------------------------------------------------ The End -----------------------------------------------------------------------------*/
+/* ------------------------------------------------------------------------------------ Responsive Design ----------------------------------------------------------------------*/
+
+/* For tablets and smaller devices */
+@media (max-width: 768px) {
+    .mainPost-container {
+        flex-direction: column;
+    }
+    
+    .mainPost-item {
+        width: 100%;
+    }
+    
+    .btn-container {
+        flex-direction: column;
+        align-items: stretch;
+    }
+}
+
+/* For mobile devices */
+@media (max-width: 480px) {
+    .user-content h2 {
+        font-size: medium;
+    }
+
+    .user-content h4 {
+        font-size: medium;
+    }
+
+    .new-element {
+        font-size: medium;
+        padding: 5px;
+    }
+
+    .edit-form textarea {
+        font-size: medium;
+    }
+
+    .edit-form button {
+        font-size: medium;
+    }
+    
+    .ShowPost, .EditPost, .newPost {
+        padding: 5px;
+        margin: 5px;
+    }
+}
