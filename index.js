@@ -5,7 +5,7 @@ const { v4: uuidv4 } = require("uuid");
 const methodOverride = require("method-override");
 
 // Use process.env.PORT for deployment environments
-const port = process.env.PORT;
+const port = process.env.PORT || 3000; // Default to 3000 for local development
 
 app.use(express.urlencoded({ extended: true }));
 app.use(methodOverride("_method"));
@@ -50,21 +50,33 @@ app.post("/posts", (req, res) => {
 app.get("/posts/:id", (req, res) => {
   const { id } = req.params;
   const post = posts.find(p => id === p.id);
-  res.render("show", { post });
+  if (post) {
+    res.render("show", { post });
+  } else {
+    res.status(404).send("Post not found");
+  }
 });
 
 app.patch("/posts/:id", (req, res) => {
   const { id } = req.params;
   const newContent = req.body.content;
   const post = posts.find(p => id === p.id);
-  post.content = newContent;
-  res.redirect("/posts");
+  if (post) {
+    post.content = newContent;
+    res.redirect("/posts");
+  } else {
+    res.status(404).send("Post not found");
+  }
 });
 
 app.get("/posts/:id/edit", (req, res) => {
   const { id } = req.params;
   const post = posts.find(p => id === p.id);
-  res.render("edit", { post });
+  if (post) {
+    res.render("edit", { post });
+  } else {
+    res.status(404).send("Post not found");
+  }
 });
 
 app.delete("/posts/:id", (req, res) => {
