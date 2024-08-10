@@ -5,7 +5,7 @@ const { v4: uuidv4 } = require("uuid");
 const methodOverride = require("method-override");
 
 // Use process.env.PORT for deployment environments
-const port = process.env.PORT || 3000; // Default to 3000 for local development
+const port = process.env.PORT;
 
 app.use(express.urlencoded({ extended: true }));
 app.use(methodOverride("_method"));
@@ -86,5 +86,9 @@ app.delete("/posts/:id", (req, res) => {
 });
 
 app.listen(port, () => {
+  if (!port) {
+    console.error("PORT environment variable is not set.");
+    process.exit(1);
+  }
   console.log(`Listening on port ${port}`);
 });
