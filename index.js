@@ -1,10 +1,11 @@
 const exp = require("constants");
 const express = require("express");
 const app = express();
-const port = 8080;
 const path = require("path");
 const { v4: uuidv4 } = require("uuid");
 const methodOverride = require("method-override");
+
+const port = process.env.PORT || 8080;
 
 app.use(express.urlencoded({ extended: true }));
 app.use(methodOverride("_method"));
@@ -18,15 +19,18 @@ let posts = [
   {
     id: uuidv4(),
     username: "hardikksrivastava",
-    content: "I am passionate developer",
+    content: "I am a passionate developer",
   },
   {
     id: uuidv4(),
     username: "shraddhakhapra",
-    content: "She is a software Engineer",
+    content: "She is a software engineer",
   },
-
 ];
+
+app.get("/", (req, res) => {
+  res.redirect("/posts");
+});
 
 app.get("/posts", (req, res) => {
   res.render("index.ejs", { posts });
@@ -45,7 +49,6 @@ app.post("/posts", (req, res) => {
 
 app.get("/posts/:id", (req, res) => {
   let { id } = req.params;
-  console.log(id);
   let post = posts.find((p) => id === p.id);
   res.render("show.ejs", { post });
 });
@@ -71,5 +74,5 @@ app.delete("/posts/:id", (req, res) => {
 });
 
 app.listen(port, () => {
-  console.log("listening to port : 8080");
+  console.log(`Listening on port ${port}`);
 });
