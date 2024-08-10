@@ -11,50 +11,30 @@
         crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
-
 <body>
     <h1>Instagram - Posts</h1>
 
-
-
     <div class="mainPost-container">
-
-        <% for(post of posts) { %>
-
+        <% for (post of posts) { %>
             <div class="mainPost-item">
-
                 <div class="user-content">
-
                     <h2>@<%= post.username %></h2>
                     <h4><%= post.content %></h4>
-
                 </div>
-
-
                 <div class="btn-container">
-
-                    <a href="http://localhost:8080/posts/<%=post.id%>" class="btns"><i class="fa-solid fa-eye fa-xl"></i></a>
-                    <a href="http://localhost:8080/posts/<%=post.id%>/edit" class="btns"><i class="fa-solid fa-pen-to-square fa-xl"></i></a>
-
-                    <form action="/posts/<%=post.id%>?_method=DELETE" method="post" class="main-form">
-
+                    <a href="/posts/<%= post.id %>" class="btns"><i class="fa-solid fa-eye fa-xl"></i></a>
+                    <a href="/posts/<%= post.id %>/edit" class="btns"><i class="fa-solid fa-pen-to-square fa-xl"></i></a>
+                    <form action="/posts/<%= post.id %>?_method=DELETE" method="post" class="main-form">
                         <button class="btns"><i class="fa-solid fa-trash fa-xl"></i></button>
-
                     </form>
-
                 </div>
-
             </div>
-
-
         <% } %>
-
     </div>
 
     <div class="newBtn-Container">
-        <a href="http://localhost:8080/posts/new" class="newBtn"><i class="fa-regular fa-square-plus fa-xl"></i></a>
+        <a href="/posts/new" class="newBtn"><i class="fa-regular fa-square-plus fa-xl"></i></a>
     </div>
-
 
 </body>
 
