@@ -12,17 +12,12 @@
 
     <h1>Create New Post</h1>
 
-
-
-        <form method="post" action="/posts" class="newPost">
-
-            <input placeholder="Enter username" name="username" class="new-element" />
-            <textarea name="content" placeholder="write your post" class="new-element" rows="10" cols="35"></textarea>
-            <button class="new-element">Submit Post</button>
-
-        </form>
-
-
+    <form method="post" action="/posts" class="newPost">
+        <input type="text" name="username" placeholder="Enter username" class="new-element" required />
+        <textarea name="content" placeholder="Write your post" class="new-element" rows="10" cols="35" required></textarea>
+        <button type="submit" class="new-element">Submit Post</button>
+    </form>
 
 </body>
+
 </html>
