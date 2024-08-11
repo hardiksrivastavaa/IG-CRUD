@@ -11,7 +11,7 @@ h1 {
 
 .mainPost-container {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     flex-wrap: wrap;
     flex-direction: column;
     margin: 10px auto;
