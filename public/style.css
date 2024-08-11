@@ -11,10 +11,10 @@ h1 {
 
 .mainPost-container {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     flex-wrap: wrap;
     flex-direction: column;
-    margin: 10px auto;
+    margin: 30px;
 
 }
 
