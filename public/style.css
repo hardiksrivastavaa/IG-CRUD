@@ -13,8 +13,8 @@ h1 {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
-    flex-direction: column;
-    margin: 30px;
+    flex-direction: row;
+    margin: 10px auto;
 
 }
 
