@@ -13,15 +13,14 @@ h1 {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
-    flex-direction: column;
+    flex-direction: row; /* changed from column to row for better layout */
     padding: 10px;
     margin: 10px;
-
+    gap: 10px; /* added gap for spacing between items */
 }
 
 .mainPost-item {
-    display: flex;
-    flex-direction: column;
+    flex: 1 1 calc(33.333% - 20px); /* responsive width with space between items */
     border: 0.5px solid;
     border-radius: 4px;
     padding: 10px;
@@ -56,6 +55,7 @@ h1 {
 /* ------------------------------------------------------------------------------------ Show Post -----------------------------------------------------------------------------*/
 
 .ShowPost {
+    flex: 1 1 calc(33.333% - 20px); /* responsive width with space between items */
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
@@ -73,6 +73,7 @@ h1 {
 /* ------------------------------------------------------------------------------------ Edit Post -----------------------------------------------------------------------------*/
 
 .EditPost {
+    flex: 1 1 calc(33.333% - 20px); /* responsive width with space between items */
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
@@ -107,6 +108,7 @@ h1 {
 /* ------------------------------------------------------------------------------------ New Post -----------------------------------------------------------------------------*/
 
 .newPost {
+    flex: 1 1 calc(33.333% - 20px); /* responsive width with space between items */
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
@@ -166,11 +168,13 @@ h1 {
     .mainPost-container {
         flex-direction: column;
     }
-    
-    .mainPost-item {
+
+    .mainPost-item, .ShowPost, .EditPost, .newPost {
         width: 100%;
+        margin-top: 0;
+        margin-bottom: 10px;
     }
-    
+
     .btn-container {
         flex-direction: column;
         align-items: stretch;
@@ -199,7 +203,7 @@ h1 {
     .edit-form button {
         font-size: medium;
     }
-    
+
     .ShowPost, .EditPost, .newPost {
         padding: 5px;
         margin: 5px;
