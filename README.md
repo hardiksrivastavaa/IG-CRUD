@@ -22,9 +22,9 @@ This is a simple CRUD (Create, Read, Update, Delete) application that mimics bas
 
 ## Live Demo
 
-You can view the live application here: [Instagram-like CRUD Application](https://instagram-crud.vercel.app/)
+You can view the live application here: [Instagram-like CRUD Application](https://igcrud.vercel.app/posts)
 
-## Usage
+## Usag
 
 - **Home Page**: Redirects to `/posts`, which displays a list of all posts.
 - **Create New Post**: Click on the "Create New Post" button to navigate to the form for adding a new post.
