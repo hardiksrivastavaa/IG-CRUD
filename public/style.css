@@ -7,7 +7,7 @@ h1 {
     text-align: center;
 }
 
-/* ------------------------------------------------------------------------------------ Main Post -----------------------------------------------------------------------------*/
+/* ------- Main Post ------- */
 
 .mainPost-container {
     display: flex;
@@ -20,7 +20,10 @@ h1 {
 }
 
 .mainPost-item {
-    flex: 1 1 calc(33.333% - 20px); /* responsive width with space between items */
+    flex: 1 1 calc(33.333% - 20px); 
+
+/* responsive width with space between items */
+
     border: 0.5px solid;
     border-radius: 4px;
     padding: 10px;
@@ -52,7 +55,7 @@ h1 {
     font-weight: 600;
 }
 
-/* ------------------------------------------------------------------------------------ Show Post -----------------------------------------------------------------------------*/
+/* ------- Show Post ------- */
 
 .ShowPost {
     flex: 1 1 calc(33.333% - 20px); /* responsive width with space between items */
@@ -70,7 +73,7 @@ h1 {
     box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;   
 }
 
-/* ------------------------------------------------------------------------------------ Edit Post -----------------------------------------------------------------------------*/
+/* ------- Edit Post ------- */
 
 .EditPost {
     flex: 1 1 calc(33.333% - 20px); /* responsive width with space between items */
@@ -105,7 +108,8 @@ h1 {
     font-size: larger;
 }
 
-/* ------------------------------------------------------------------------------------ New Post -----------------------------------------------------------------------------*/
+/* ------- New Post ------- */
+
 
 .newPost {
     flex: 1 1 calc(33.333% - 20px); /* responsive width with space between items */
@@ -129,7 +133,7 @@ h1 {
     font-size: larger;
 }
 
-/* ----------------------------- Buttons : Detailed Post, Delete Post, Edit Post -----------------------------------------------------------*/
+/* --- Buttons : Detailed Post, Delete Post, Edit Post ----*/
 
 .btn-container {
     display: flex;
@@ -147,7 +151,7 @@ h1 {
     border: 0;
 }
 
-/* ------------------------------------------------------------------------------------ Create New Button --------------------------------------------------------------------*/
+/* ------- Create New Button ------- */
 
 .newBtn-Container {
     display: flex;
@@ -161,7 +165,8 @@ h1 {
     transform: scale(1.5);
 }
 
-/* ------------------------------------------------------------------------------------ Responsive Design ----------------------------------------------------------------------*/
+/* ------- Responsive Design ------- */
+
 
 /* For tablets and smaller devices */
 @media (max-width: 768px) {
