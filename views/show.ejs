@@ -4,22 +4,26 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Post in Detail</title>
+    <title>Show Post</title>
+    <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="/style.css" />
-</head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  </head>
+  
 
-<body>
+<body class="bg-gray-100 p-6">
+    <h1 class="text-4xl font-bold text-center text-gray-800 mb-6">Here is Your Detailed Post</h1>
 
-    <h1>Here is Your Detailed Post</h1>
-
-
-    <div class="ShowPost">
-
-        <p>Post ID : <%= post.id %></p>
-        <h3>User : @<%=post.username %></h3>
-        <h3>Caption : <%=post.content %></h3>
-
+    <div class="bg-white shadow-md rounded-lg p-6 max-w-xl mx-auto">
+        <p class="text-gray-500 mb-4">Post ID: <%= post.id %>
+        </p>
+        <h3 class="text-xl font-semibold text-gray-700 mb-2">User: @<%= post.username %>
+        </h3>
+        <h3 class="text-gray-600">Caption: <%= post.content %>
+        </h3>
     </div>
-
 </body>
+
 </html>
