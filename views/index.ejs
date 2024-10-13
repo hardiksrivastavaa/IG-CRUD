@@ -4,38 +4,46 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>All Posts</title>
+    <title>Instagram</title>
+    <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="/style.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
-        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
-</head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  </head>
+  
 
-<body>
-    <h1>Instagram - Posts</h1>
+<body class="bg-gray-100 p-6">
+    <h1 class="text-4xl font-bold text-center text-gray-800 mb-6">Instagram - Posts</h1>
 
-    <div class="mainPost-container">
+    <div class="grid gap-6 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 max-w-6xl mx-auto">
         <% for (post of posts) { %>
-            <div class="mainPost-item">
-                <div class="user-content">
-                    <h2>@<%= post.username %></h2>
-                    <h4><%= post.content %></h4>
+            <div class="bg-white shadow-md rounded-lg p-6">
+                <div class="mb-4">
+                    <h2 class="text-xl font-semibold text-gray-700">@<%= post.username %>
+                    </h2>
+                    <h4 class="text-gray-500">
+                        <%= post.content %>
+                    </h4>
                 </div>
-                <div class="btn-container">
-                    <a href="/posts/<%= post.id %>" class="btns"><i class="fa-solid fa-eye fa-xl"></i></a>
-                    <a href="/posts/<%= post.id %>/edit" class="btns"><i class="fa-solid fa-pen-to-square fa-xl"></i></a>
-                    <form action="/posts/<%= post.id %>?_method=DELETE" method="post" class="main-form">
-                        <button class="btns"><i class="fa-solid fa-trash fa-xl"></i></button>
+                <div class="flex justify-between items-center mt-4">
+                    <a href="/posts/<%= post.id %>" class="text-blue-500"><i class="fa-solid fa-eye fa-xl"></i></a>
+                    <a href="/posts/<%= post.id %>/edit" class="text-yellow-500"><i
+                            class="fa-solid fa-pen-to-square fa-xl"></i></a>
+                    <form action="/posts/<%= post.id %>?_method=DELETE" method="post" class="inline-block">
+                        <button class="text-red-500"><i class="fa-solid fa-trash fa-xl"></i></button>
                     </form>
                 </div>
             </div>
-        <% } %>
+            <% } %>
     </div>
 
-    <div class="newBtn-Container">
-        <a href="/posts/new" class="newBtn"><i class="fa-regular fa-square-plus fa-xl"></i></a>
+    <div class="fixed bottom-6 right-6">
+        <a href="/posts/new" class="bg-green-500 text-white rounded-full p-4 shadow-lg">
+            <i class="fa-regular fa-square-plus fa-2xl"></i>
+        </a>
     </div>
-
 </body>
+
 
 </html>
