@@ -4,20 +4,24 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Create New Post</title>
-    <link rel="stylesheet" href="/style.css" />
-</head>
+    <title>New Post</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  </head>
+  
 
-<body>
-
-    <h1>Create New Post</h1>
-
-    <form method="post" action="/posts" class="newPost">
-        <input type="text" name="username" placeholder="Enter username" class="new-element" required />
-        <textarea name="content" placeholder="Write your post" class="new-element" rows="10" cols="35" required></textarea>
-        <button type="submit" class="new-element">Submit Post</button>
+<body class="bg-gray-100 p-6">
+    <h1 class="text-4xl font-bold text-center text-gray-800 mb-6">Create New Post</h1>
+  
+    <form method="post" action="/posts" class="bg-white shadow-md rounded-lg p-6 max-w-xl mx-auto">
+      <input type="text" name="username" placeholder="Enter username" class="w-full border border-gray-300 p-3 mb-4 rounded-lg" required />
+      <textarea name="content" placeholder="Write your post" class="w-full border border-gray-300 p-3 mb-4 rounded-lg" rows="10" required></textarea>
+      <button type="submit" class="w-full bg-blue-500 text-white p-3 rounded-lg hover:bg-blue-600">Submit Post</button>
     </form>
-
-</body>
+  </body>
+  
 
 </html>
