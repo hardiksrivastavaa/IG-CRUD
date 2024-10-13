@@ -1,10 +1,7 @@
+    <!DOCTYPE html>
+    <html lang="en">
 
-
-
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
+    <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>All Posts</title>
@@ -25,35 +22,35 @@
 
 <body class="bg-gray-100">
 
-    <h1 class="text-4xl text-center font-bold text-blue-600 mt-6">Instagram - Posts</h1>
+    <h1 class="text-3xl md:text-4xl text-center font-bold text-blue-600 mt-4 md:mt-6">Instagram - Posts</h1>
 
-    <div class="max-w-4xl mx-auto mt-8 space-y-6">
+    <div class="max-w-6xl mx-auto mt-6 md:mt-8 space-y-4 md:space-y-6 px-4">
         <% for (post of posts) { %>
-        <div class="bg-white p-6 rounded-lg shadow-md flex justify-between items-center">
+        <div class="bg-white p-4 md:p-6 rounded-lg shadow-lg flex flex-col md:flex-row justify-between items-start md:items-center space-y-4 md:space-y-0">
             <!-- User content -->
-            <div class="space-y-2">
-                <h2 class="text-2xl font-semibold text-gray-800">@<%= post.username %></h2>
-                <h4 class="text-gray-600"><%= post.content %></h4>
+            <div class="flex-1 space-y-2">
+                <h2 class="text-xl md:text-2xl font-semibold text-gray-800">@<%= post.username %></h2>
+                <h4 class="text-sm md:text-base text-gray-600"><%= post.content %></h4>
             </div>
 
             <!-- Buttons container -->
-            <div class="flex space-x-3">
+            <div class="flex space-x-4">
                 <!-- View button -->
                 <a href="/posts/<%= post.id %>"
-                    class="text-blue-500 hover:text-blue-700 transition-colors duration-300">
-                    <i class="fa-solid fa-eye fa-xl"></i>
+                    class="text-blue-500 hover:text-blue-700 transition-colors duration-300 text-lg md:text-xl">
+                    <i class="fa-solid fa-eye"></i>
                 </a>
 
                 <!-- Edit button -->
                 <a href="/posts/<%= post.id %>/edit"
-                    class="text-yellow-500 hover:text-yellow-700 transition-colors duration-300">
-                    <i class="fa-solid fa-pen-to-square fa-xl"></i>
+                    class="text-yellow-500 hover:text-yellow-700 transition-colors duration-300 text-lg md:text-xl">
+                    <i class="fa-solid fa-pen-to-square"></i>
                 </a>
 
                 <!-- Delete button -->
                 <form action="/posts/<%= post.id %>?_method=DELETE" method="post">
-                    <button class="text-red-500 hover:text-red-700 transition-colors duration-300">
-                        <i class="fa-solid fa-trash fa-xl"></i>
+                    <button class="text-red-500 hover:text-red-700 transition-colors duration-300 text-lg md:text-xl">
+                        <i class="fa-solid fa-trash"></i>
                     </button>
                 </form>
             </div>
@@ -61,10 +58,10 @@
         <% } %>
     </div>
 
-    <div class="fixed bottom-8 right-8">
+    <div class="fixed bottom-6 right-6 md:bottom-8 md:right-8">
         <a href="/posts/new"
-            class="bg-blue-500 text-white p-3 rounded-full shadow-lg hover:bg-blue-700 transition-colors duration-300">
-            <i class="fa-regular fa-square-plus fa-xl"></i>
+            class="bg-blue-500 text-white p-4 rounded-full shadow-lg hover:bg-blue-700 transition-colors duration-300">
+            <i class="fa-regular fa-square-plus fa-2xl"></i>
         </a>
     </div>
 
