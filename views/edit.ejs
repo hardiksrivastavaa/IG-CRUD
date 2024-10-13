@@ -5,31 +5,30 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Edit Post</title>
+    <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
-    integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
-    crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  </head>
+  
 
-</head>
+<body class="bg-gray-100 p-6">
+    <h1 class="text-4xl font-bold text-center text-gray-800 mb-6">Edit Your Post</h1>
 
-<body>
+    <div class="bg-white shadow-md rounded-lg p-6 max-w-xl mx-auto">
+        <p class="text-gray-500 mb-4">Post ID: <%= post.id %>
+        </p>
+        <p class="text-gray-500 mb-4">Username: @<%= post.username %>
+        </p>
 
-<h1>Edit your post</h1>
-
-    <div class="EditPost">
-    
-
-        <p>Post id : <%= post.id %></p>
-        <p>Post username : @<%=post.username %></p>
-
-        <form action="/posts/<%=post.id%>?_method=PATCH" method="post" class="edit-form">
-
-            <textarea rows="12" cols="35" name="content"><%= post.content %></textarea>
-            <button>Submit Post</button>
-
+        <form action="/posts/<%= post.id %>?_method=PATCH" method="post" class="mb-4">
+            <textarea rows="12" cols="35" name="content"
+                class="w-full border border-gray-300 p-3 rounded-lg mb-4"><%= post.content %></textarea>
+            <button type="submit" class="w-full bg-blue-500 text-white p-3 rounded-lg hover:bg-blue-600">Submit
+                Post</button>
         </form>
-
     </div>
-
 </body>
+
 </html>
